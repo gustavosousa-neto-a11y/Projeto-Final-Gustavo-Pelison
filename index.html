@@ -1,11 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfólio | Gustavo Pelison</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+    <header>
+        <div class="logo">&lt;Gustavo /&gt;</div>
+        <nav>
+            <button class="nav-link" onclick="rolarPara('sobre')">Sobre</button>
+            <button class="nav-link" onclick="rolarPara('projetos')">Projetos</button>
+            <button class="nav-link" onclick="rolarPara('skills')">Habilidades</button>
+            <button class="nav-link" onclick="rolarPara('contato')">Contato</button>
+            <button class="btn-theme" id="theme-toggle" onclick="alternarTema()">☀️ Claro</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre">
+            <div class="hero-container">
+                <div class="hero-info">
+                    <h1>Gustavo Pelison de Sousa Neto</h1>
+                    <div class="hero-subtitle">Cursando Informática para Internet — SENAI</div>
+                    <p>Olá! Sou estudante no SENAI e estou sempre disposto a aprender ainda mais sobre esta área maravilhosa que é a TI. Estou neste curso principalmente pelas grandes oportunidades que ele poderá me proporcionar no futuro.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos em Desenvolvimento</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div>
+                        <h3>IMPULSO MKT</h3>
+                        <p>Plataforma criada para ajudar lojas pequenas ou em fase inicial a impulsionar seu engajamento e visibilidade, atraindo mais clientes e aumentando a reputação no mercado.</p>
+                        <div class="tech-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Design</span>
+                        </div>
+                    </div>
+                    <a href="#contato" class="btn-primary">Saber Mais</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Habilidades</h2>
+            <div class="skills-container">
+                <div class="skill-badge">HTML</div>
+                <div class="skill-badge">CSS</div>
+                <div class="skill-badge">JavaScript</div>
+                <div class="skill-badge">Design</div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <!-- SUBSTITUA O E-MAIL ABAIXO PELO SEU EMAIL REAL -->
+            <form action="https://formsubmit.co/SEU_EMAIL@AQUI.COM" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Nova mensagem do Portfólio - Gustavo!">
+
+                <div class="form-group">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Seu E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Como posso te ajudar?" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 - Gustavo Pelison de Sousa Neto</p>
+    </footer>
+
+    <script>
+        function rolarPara(id) {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function alternarTema() {
+            const body = document.body;
+            const btn = document.getElementById('theme-toggle');
+
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                btn.innerText = '🌙 Escuro';
+            } else {
+                btn.innerText = '☀️ Claro';
+            }
+        }
+    </script>
 </body>
 </html>
